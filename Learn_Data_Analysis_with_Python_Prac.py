@@ -18,31 +18,21 @@
 import zipfile
 from pathlib import Path #NGL
 
-#path_to_zip_file = Path("datasets.zip").absolute()
 path_to_zip_file = "datasets.zip"
 directory_to_extract_to = Path().absolute()
-print(f"Path to zip file: {path_to_zip_file}")
-print(f"Directory to extract to: {directory_to_extract_to}")
+# print(f"Path to zip file: {path_to_zip_file}") # Check file path
+# print(f"Directory to extract to: {directory_to_extract_to}") # Check directory for extraction
+
+
+# +
+def extract_file(z_file, extraction_dest):
+    zip_ref = zipfile.ZipFile(z_file, 'r')
+    zip_ref.extractall(extraction_dest)
+    zip_ref.close()
+    
+extract_file(path_to_zip_file, directory_to_extract_to)
+zip_ref.close()
 
 # -
-
-zip_ref = zipfile.ZipFile(path_to_zip_file, 'r')
-zip_ref.extractall(directory_to_extract_to)
-zip_ref.close()
-"""
-print(20*"*")
-#import pathlib
-#current_dir = pathlib.Path(__file__).parent
-#current_file = pathlib.Path(__file__)
-#print(f"Current Directory: {current_dir}")
-#print(f"Current File: {current_file}")
-
-#print(os.path.abspath(__file__))
-
-from pathlib import Path
-print("File      Path:", Path(path_to_zip_file).absolute())
-print("Directory Path:", Path().absolute()) 
-
-"""
 
 
