@@ -30,8 +30,7 @@ def extract_file(z_file, extraction_dest):
     zip_ref.extractall(extraction_dest)
     zip_ref.close()
     
-extract_file(path_to_zip_file, directory_to_extract_to)
-zip_ref.close()
+# extract_file(path_to_zip_file, directory_to_extract_to) # -> Run this only once!
 
 # -
 
